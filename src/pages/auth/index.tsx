@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseConfig } from "../../firebase-config";
-import UserForm from "../../components/header/userForm";
+import UserForm from "../../components/form/userForm";
 import { initializeApp } from "firebase/app";
 
 type credType = {
@@ -28,18 +28,32 @@ const Auth = () => {
     }));
   };
 
-  useEffect(() => {
-    const auth = getAuth();
+  // useEffect(() => {
+  //   const auth = getAuth();
 
+  //   createUserWithEmailAndPassword(auth, cred.email, cred.password)
+  //     .then((user) => console.log(user))
+  //     .catch((error) => console.log(error));
+  // }, []);
+
+  const signUp = () => {
+    const auth = getAuth();
     createUserWithEmailAndPassword(auth, cred.email, cred.password)
       .then((user) => console.log(user))
       .catch((error) => console.log(error));
-  }, []);
+  };
+
+  const signIn = () => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, cred.email, cred.password)
+      .then((user) => console.log(user))
+      .catch((error) => console.log(error));
+  }
 
   return (
     <main className="mt-8 flex flex-col gap-4">
       <h1 className="text-center font-semibold text-lg">This is Auth Page</h1>
-      <UserForm getUserEmailAndPassword={getUserEmailAndPassword} />
+      <UserForm getUserEmailAndPassword={getUserEmailAndPassword} signUp={signUp} signIn={signIn}/>
     </main>
   );
 };
