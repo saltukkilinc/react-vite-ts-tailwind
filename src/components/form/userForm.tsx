@@ -46,7 +46,7 @@ const UserForm = ({getUserEmailAndPassword, signUp, signIn}: userFormTypes) => {
   }
 
   return (
-    <form className="flex flex-col  gap-y-3 px-4 w-full min-[768px]:w-2/3 lg:w-1/2 xl:w-1/3 mx-auto">
+    <form className="flex flex-col  gap-y-3 px-4 w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mx-auto">
       <h1 className="text-center font-medium text-base">User Form</h1>
       <div className="flex flex-col items-center gap-y-2 w-full">
         <label htmlFor="email">Email</label>
@@ -73,7 +73,7 @@ const UserForm = ({getUserEmailAndPassword, signUp, signIn}: userFormTypes) => {
           value={formState.password}
         />
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-2">
         <button className="border border-green-500 px-4 py-1 text-center rounded-lg" onClick={signUpHandler}>Sign Up</button>
         <button className="border border-green-500 px-4 py-1 text-center rounded-lg" onClick={signInHandler}>Sign In</button>
       </div>
