@@ -20,6 +20,11 @@ const Header = () => {
             <button className="py-1 px-4  bg-blue-500 rounded-lg">Sign-Up/In</button>
           </NavLink>
         </li>
+        <li>
+          <NavLink to={"calendar"} className={({isActive}) => isActive ? "text-green-400" : "text-white"} end>
+            <button className="py-1 px-4  bg-blue-500 rounded-lg">Go to Calendar Page</button>
+          </NavLink>
+        </li>
       </ul>
     </header>
   );

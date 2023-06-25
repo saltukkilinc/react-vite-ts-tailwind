@@ -6,3 +6,42 @@ body,
 #root {
   min-height: 100vh;
 }
+
+/* <button class="react-calendar__tile react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__tile--rangeEnd react-calendar__tile--rangeBothEnds react-calendar__month-view__days__day" type="button" style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"><abbr aria-label="29 Haziran 2023">29</abbr></button> */
+
+/* If you chose range, this shows background of all choses */
+.react-calendar__tile--active {
+  background-color: chartreuse !important;
+}
+/* This show today's background */
+.react-calendar__tile--now {
+  background-color: rgb(68, 68, 150) !important;
+}
+
+.react-calendar__tile--hover{
+  background-color: rgb(98, 96, 126) !important;
+}
+
+.react-calendar__tile--rangeStart {
+  background-color: red !important;
+}
+
+.react-calendar__tile--rangeEnd {
+  background-color:rgb(255, 0, 234) !important;
+}
+
+.react-calendar {
+  border-radius: 10px;
+}
+
+
+
+
+/* .react-calendar__tile--range {
+  background-color: cadetblue !important;
+} */
+
+
+/* .react-calendar__month-view__days__day {
+  background-color: brown !important;
+} */
