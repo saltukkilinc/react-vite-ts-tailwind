@@ -15,7 +15,7 @@ const CalendarPage = () => {
     setValue(nextValue);
   };
 
-  console.log(value);
+  
 
   // console.log(inputRef);
 
@@ -34,10 +34,10 @@ const CalendarPage = () => {
       </div>
       <div className="mt-8 grid grid-cols-2">
         <p className="">
-          First Date: {new Date(value[0]).toLocaleDateString("en-UK")}
+          First Date: {value?.length > 0 && new Date(value[0])?.toLocaleDateString("en-UK")}
         </p>
         <p className="">
-          Second Date: {new Date(value[1]).toLocaleDateString("en-UK")}
+          Second Date: {value?.length > 0 && new Date(value[1])?.toLocaleDateString("en-UK")}
         </p>
       </div>
     </>

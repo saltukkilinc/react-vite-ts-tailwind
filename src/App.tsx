@@ -5,6 +5,7 @@ import Layout from "./pages/layout";
 import ProductDetail from "./pages/productDetail";
 import Auth from "./pages/auth";
 import CalendarPage from "./pages/calendar";
+import ModalSheetPage from "./pages/modalSheet";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="product-detail/:productId" element={<ProductDetail />} />
         <Route path="auth" element={<Auth />} />
         <Route path="calendar" element={<CalendarPage />} />
+        <Route path="modal-sheet" element={<ModalSheetPage />} />
       </Route>
     </Routes>
   );
