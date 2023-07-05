@@ -45,35 +45,35 @@ function ModalSheet({
 
 const SpecialOffersModalContent = ({ onClose }: { onClose: () => void }) => {
   return (
-    <div className="h-full pb-10 mx-6 overflow-none flex flex-col">
-      <p className="text-base font-normal text-[#777B83] mb-6">
+    <div className="h-full pb-10 mx-6 flex flex-col overflow-auto">
+      <p className="text-base font-normal text-[#777B83] mb-6 ">
         Complete your trip quickly and easily with other services for a
         well-planned travel!
       </p>
-      <p className="text-base font-normal text-[#777B83] mb-3">
+      <p className="text-base font-normal text-[#777B83] mb-3 ">
         Special offers are here for you.
       </p>
 
-      <div className="flex flex-col items-center justify-center">
-        <button className="border border-red-500">
+      <div className="flex flex-col flex-1">
+        <button className="flex flex-col justify-center items-center">
           <img
             src={avisSpecialOffer}
             alt="Avis Special Offer Image"
-            className="max-w-[327px] max-h-full mb-4 "
+            className="w-full max-w-[340px] h-auto mb-4 "
           />
         </button>
-        <button>
+        <button className="flex flex-col justify-center items-center">
           <img
             src={hiltonSpecialOffer}
             alt="Hilton Special Offer Image"
-            className="max-w-[327px] max-h-full mb-4 "
+            className="w-full max-w-[340px] h-auto mb-4 "
           />
         </button>
-        <button>
+        <button className="flex flex-col justify-center items-center">
           <img
             src={allianzSpecialOffer}
             alt="Allianz Special Offer Image"
-            className="max-w-[327px] max-h-full mb-[21px] "
+            className="w-full max-w-[340px] h-auto mb-[21px] "
           />
         </button>
       </div>
