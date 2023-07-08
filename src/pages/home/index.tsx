@@ -1,18 +1,22 @@
-import React from 'react'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { name } = useSelector((state: RootState) => state.auth);
   return (
     <div>
-      <h1>Home Page</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus modi similique voluptatibus ut aut ipsum laborum placeat sapiente, cupiditate distinctio laudantium nemo aperiam illum ab omnis facilis quam, quibusdam repudiandae!</p>
-      <p>Quo deleniti officiis voluptas odit, voluptatum pariatur animi temporibus a. Ipsum, adipisci, cum possimus sapiente itaque aperiam reprehenderit temporibus nemo quidem molestias voluptatem enim suscipit? Molestias nesciunt quod mollitia voluptates?</p>
-      <p>Aspernatur soluta voluptatum modi iste consequatur error reiciendis rerum laborum distinctio sequi, fuga ratione. Odio ipsam suscipit iure dolor nihil enim veniam omnis ex dolorum, autem cumque blanditiis quos maiores.</p>
-      <p>Eius vitae placeat inventore sint fugit excepturi ut asperiores. Error iure minus distinctio consectetur facilis corrupti repudiandae magnam accusantium impedit ab dolorum, itaque ut omnis voluptatem aperiam earum placeat cumque.</p>
-      <p>Repellat officia obcaecati, omnis molestiae, doloremque modi pariatur perferendis laudantium inventore delectus optio tempore soluta nemo maiores, rem explicabo earum! Consequuntur quaerat amet pariatur aspernatur. Atque voluptates consequatur maiores cupiditate.</p>
-      <br />
-      <h1>{self.crypto.randomUUID()}</h1>
+      <h1 className="text-3xl font-semibold text-center my-3">Home Page</h1>
+      <button
+        onClick={() => dispatch.auth.setName(name === "osman" ? "saltuk" : "osman")}
+        className="border border-red-500 p-4 rounded-lg hover:bg-green-400 hover:border-none hover:text-white mx-auto block"
+      >
+        Change Name
+      </button>
+      <p>{name}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
