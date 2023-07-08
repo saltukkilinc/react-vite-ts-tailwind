@@ -8,7 +8,7 @@ export interface RootModel extends Models<RootModel> {
   auth: typeof auth;
 }
 
-type FullModel = ExtraModelsFromLoading<RootModel>;
+type FullModel = ExtraModelsFromLoading<RootModel,  { type: 'full' }>;
 
 export const models: RootModel = {
   auth,
@@ -16,7 +16,7 @@ export const models: RootModel = {
 
 export const store = init<RootModel, FullModel>({
   models,
-  plugins: [loadingPlugin({})],
+  plugins: [loadingPlugin( { type: 'full' })],
 });
 /* interface LoadingPlugin<M extends Models> {
 	loading: {

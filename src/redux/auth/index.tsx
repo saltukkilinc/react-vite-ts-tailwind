@@ -24,10 +24,18 @@ const auth = createModel<RootModel>()({
   },
 
   effects: dispatch => ({
-    // async asyncGetUserLink(): Promise<void> {
-    //   let response = await AuthManager.getUserLink();
-    //   dispatch.search.setChosenCar(response.lastStateInfo.chosenCar);
-    // },
+    async getNameAsync(payload:string, state): Promise<void> {
+      // Bu kısım pluginleri ve async operasyonu test etmek için oluşturuldu.Burada sadece bir promise oluşturuldu.Promise handle edilmedi.
+      // error olayını loading pluginiyle home page de yakalamak için isError ' u true yap
+      await new Promise((resolve, reject) => setTimeout(() => {
+        const isError = false;
+        if(isError) {
+          reject(new Error("there is an error"))
+        }
+        resolve("")
+      }, 3000));
+      dispatch.auth.setName(payload);
+    }
   }),
 });
 
