@@ -6,6 +6,7 @@ import ProductDetail from "./pages/productDetail";
 import Auth from "./pages/auth";
 import CalendarPage from "./pages/calendar";
 import ModalSheetPage from "./pages/modalSheet";
+import Pdf from "./pages/pdf";
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
         <Route path="auth" element={<Auth />} />
         <Route path="calendar" element={<CalendarPage />} />
         <Route path="modal-sheet" element={<ModalSheetPage />} />
+        <Route path="react-pdf" element={<Pdf />} />
       </Route>
     </Routes>
   );
 }
-
+//react-pdf
 export default App;
