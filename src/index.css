@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face{ 
+  font-family: 'Barlow';              
+  src:url('src/Barlow/Barlow-Italic.ttf');  
+}
+
 body,
 #root {
   min-height: 100vh;
+  font-family: 'Barlow';
 }
 
 /* <button class="react-calendar__tile react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__tile--rangeEnd react-calendar__tile--rangeBothEnds react-calendar__month-view__days__day" type="button" style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"><abbr aria-label="29 Haziran 2023">29</abbr></button> */

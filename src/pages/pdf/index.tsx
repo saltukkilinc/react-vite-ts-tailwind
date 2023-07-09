@@ -1,11 +1,23 @@
-import React from 'react'
+import React from "react";
+import { pdfStyles } from "./pdfStyle";
+import { Page, Document, PDFViewer } from "@react-pdf/renderer";
+import CarInfo from "./carInfo";
 
 const Pdf = () => {
-  return (
-    <div>
-      <h1>PDF Page</h1>
-    </div>
-  )
-}
+  const doc = (
+    <Document>
+      <Page size="A4" style={pdfStyles.page}>
+        <CarInfo />
+      </Page>
+    </Document>
+  );
 
-export default Pdf
+  return (
+    <PDFViewer style={{flex: 1}}>
+      {doc}
+    </PDFViewer>
+   
+  );
+};
+
+export default Pdf;
