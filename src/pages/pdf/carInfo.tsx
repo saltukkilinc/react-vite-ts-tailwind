@@ -4,6 +4,21 @@ import avisIcon from "../../assets/avisIcon.png";
 
 import { pdfStyles } from "./pdfStyle";
 
+type FieldBarTypes = {
+  title: string;
+  sbTitle1: string;
+  sbTitle2: string;
+};
+const FieldBar = ({ title, sbTitle1, sbTitle2 }: FieldBarTypes) => {
+  return (
+    <View>
+      <Text>{title}:</Text>
+      <Text style={pdfStyles.fontBold}>{sbTitle1}</Text>
+      <Text style={pdfStyles.fontBold}>{sbTitle2}</Text>
+    </View>
+  );
+};
+
 const CarInfo = () => {
   return (
     <View>
@@ -16,16 +31,8 @@ const CarInfo = () => {
       </View>
       <View style={pdfStyles.article}>
         <View style={pdfStyles.articleItem}>
-          <View>
-            <Text>Name:</Text>
-            <Text style={pdfStyles.fontBold}>Saltuk Bugra</Text>
-            <Text style={pdfStyles.fontBold}>Kilinc</Text>
-          </View>
-          <View>
-            <Text>Rental Car:</Text>
-            <Text style={pdfStyles.fontBold}>Renault</Text>
-            <Text style={pdfStyles.fontBold}>Clio</Text>
-          </View>
+          <FieldBar title="Name:" sbTitle1="Saltuk Bugra" sbTitle2="Kılınc" />
+          <FieldBar title="Rental Car:" sbTitle1="Renault" sbTitle2="Clio" />
         </View>
         <View style={pdfStyles.articleItem}>
           <View>
