@@ -4,8 +4,18 @@
 
 @font-face{ 
   font-family: 'Barlow';              
-  src:url('src/Barlow/Barlow-Italic.ttf');  
+  src:url('src/Barlow/Barlow-Italic.ttf'); 
+};
+@font-face {
+  font-family: "Barlow-Bold";
+  src: url('src/Barlow/Barlow-Bold.ttf');
 }
+
+.barlow-bold {
+  font-family: "Barlow-Bold";
+  font-weight: 700;
+}
+
 
 body,
 #root {

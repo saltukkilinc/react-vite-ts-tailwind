@@ -13,6 +13,7 @@ const CalendarPage = () => {
 
   const onChangeHandler = (nextValue: ValuePiece) => {
     //const values = nextValue?.map((item: ValuePiece) => new Date(item as Date).toISOString());
+    console.log(nextValue)
     setValue(nextValue);
   };
 
@@ -22,7 +23,8 @@ const CalendarPage = () => {
 
   return (
     <div>
-      <DoubleChosenCalendar value={value} onChangeHandler={onChangeHandler} />
+      <h2 className="text-center my-3 barlow-bold">Range Chosen Calendar</h2>
+      <DoubleChosenCalendar value={value} onChangeHandler={onChangeHandler} inputRef={inputRef} />
     </div>
   );
 };

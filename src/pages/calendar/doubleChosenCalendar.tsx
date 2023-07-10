@@ -7,11 +7,12 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 type propTypes = {
   value: any,
-  onChangeHandler: (naxtVal: any) => void
+  onChangeHandler: (naxtVal: any) => void,
+  inputRef:  React.MutableRefObject<undefined>
 }
 
-const DoubleChosenCalendar = ({value, onChangeHandler}: propTypes) => {
-  const inputRef = useRef();
+const DoubleChosenCalendar = ({value, onChangeHandler, inputRef}: propTypes) => {
+  
  
   return (
     <div>
