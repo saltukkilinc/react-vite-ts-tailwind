@@ -27,7 +27,7 @@ const DoubleChosenCalendar = ({value, onChangeHandler, inputRef}: propTypes) => 
         selectRange
       />
       </div>
-      <div className="mt-8 grid grid-cols-2">
+      <div className="mt-8 grid grid-cols-2 px-3">
         <p className="">
           First Date: {value?.length > 0 && new Date(value[0])?.toLocaleDateString("en-UK")}
         </p>

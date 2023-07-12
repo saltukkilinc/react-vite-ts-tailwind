@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import DoubleChosenCalendar from "./doubleChosenCalendar";
+import OneWayChosenCalendar from "./oneWayChosenCalendar";
 
 type ValuePiece = Date | null;
 
@@ -13,19 +14,32 @@ const CalendarPage = () => {
 
   const onChangeHandler = (nextValue: ValuePiece) => {
     //const values = nextValue?.map((item: ValuePiece) => new Date(item as Date).toISOString());
-    console.log(nextValue)
+    console.log(nextValue);
     setValue(nextValue);
   };
-
-  
 
   // console.log(inputRef);
 
   return (
-    <div>
-      <h2 className="text-center my-3 barlow-bold">Range Chosen Calendar</h2>
-      <DoubleChosenCalendar value={value} onChangeHandler={onChangeHandler} inputRef={inputRef} />
-    </div>
+    <section>
+      <article className="mb-4">
+        <h2 className="text-center my-3 barlow-bold">Range Chosen Calendar</h2>
+        <DoubleChosenCalendar
+          value={value}
+          onChangeHandler={onChangeHandler}
+          inputRef={inputRef}
+        />
+      </article>
+      <article className="my-12 px-3 grid grid-cols-2 gap-y-3">
+        <h2 className="text-center my-3 barlow-bold col-start-1 col-end-3">
+          One Way Calendar
+        </h2>
+        <OneWayChosenCalendar />
+        <OneWayChosenCalendar />
+        <p>First Date: </p>
+        <p>Second Date: </p>
+      </article>
+    </section>
   );
 };
 
