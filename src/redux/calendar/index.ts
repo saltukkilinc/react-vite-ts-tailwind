@@ -16,6 +16,10 @@ const calendar = createModel<RootModel>()({
     setDepartDate: (state, departDate) => ({
       ...state,
       departDate
+    }),
+    setReturnDate: (state, returnDate) => ({
+      ...state,
+      returnDate
     })
   },
 

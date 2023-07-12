@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
-import Calendar from 'react-calendar'
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import { useAppDispatch } from '../../redux/store';
 
-const OneWayChosenCalendar = () => {
-  const today = new Date()
- const [value, setValue] = useState(today);
- const onChangeHandler = (value_: Date) => {
-  setValue(value_)
- }
+type CalendarProptypes = {
+  val: string;
+  setVal: any
+}
+const OneWayChosenCalendar = ({val, setVal}: CalendarProptypes) => {
+  
+  const today = new Date();
   return (
     <div>
       <Calendar
-        onChange={(val) => onChangeHandler(val as Date)}
-        value={value}
+        onChange={(val) => setVal(val?.toString())}
+        value={val == 'Return Date' || val == 'Depart Date' ? today : new Date(val)}
         calendarType="ISO 8601"
         locale="en-US"
       />    
