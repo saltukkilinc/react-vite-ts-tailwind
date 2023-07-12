@@ -1,34 +1,27 @@
 import { init, RematchDispatch, RematchRootState, Models } from "@rematch/core";
 import loadingPlugin, { ExtraModelsFromLoading } from "@rematch/loading";
-import auth from "./auth";
+import count from "./count";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import auth from "./auth";
 
 
 export interface RootModel extends Models<RootModel> {
-  auth: typeof auth;
+  count: typeof count;
+	auth: typeof auth;
 }
 
 type FullModel = ExtraModelsFromLoading<RootModel,  { type: 'full' }>;
 
 export const models: RootModel = {
-  auth,
+  count,
+	auth
 };
 
 export const store = init<RootModel, FullModel>({
   models,
   plugins: [loadingPlugin( { type: 'full' })],
 });
-/* interface LoadingPlugin<M extends Models> {
-	loading: {
-		models: { [modelKey in keyof M]: M[modelKey]['name'] }
-		effects: {
-			[modelKey in keyof M]: ExtractRematchDispatchersFromEffects<
-				M[modelKey]['effects']
-			>
-		}
-		global: boolean
-	}
-} */
+
 export type Store = typeof store;
 export type Dispatch = RematchDispatch<RootModel>;
 export type RootState = RematchRootState<RootModel, FullModel>;
