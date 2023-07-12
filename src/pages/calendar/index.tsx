@@ -14,7 +14,6 @@ const CalendarPage = () => {
 
   const onChangeHandler = (nextValue: ValuePiece) => {
     //const values = nextValue?.map((item: ValuePiece) => new Date(item as Date).toISOString());
-    console.log(nextValue);
     setValue(nextValue);
   };
 

@@ -3,18 +3,21 @@ import loadingPlugin, { ExtraModelsFromLoading } from "@rematch/loading";
 import count from "./count";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import auth from "./auth";
+import calendar from "./calendar";
 
 
 export interface RootModel extends Models<RootModel> {
   count: typeof count;
 	auth: typeof auth;
+  calendar: typeof calendar;
 }
 
 type FullModel = ExtraModelsFromLoading<RootModel,  { type: 'full' }>;
 
 export const models: RootModel = {
   count,
-	auth
+	auth,
+  calendar
 };
 
 export const store = init<RootModel, FullModel>({
