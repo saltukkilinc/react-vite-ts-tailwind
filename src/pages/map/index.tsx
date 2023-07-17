@@ -4,12 +4,14 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 const LeafletMap = () => {
+
   const selectedPin = new L.Icon({
     iconUrl: "/pin.png",
     iconSize: [36, 48],
     iconAnchor: [36, 0],
     // popupAnchor: [-3, -40],
   });
+  
   return (
     <MapContainer
       center={[41.0685, 29.2153]}
