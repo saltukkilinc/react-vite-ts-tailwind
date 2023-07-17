@@ -20,6 +20,7 @@ const Header = () => {
           <HeaderItem href="calendar" title="Calendar" />
           <HeaderItem href="modal-sheet" title="Modal Sheet" />
           <HeaderItem href="react-pdf" title="Pdf" />
+          <HeaderItem href="leaflet-map" title="Leaflet Map" />
         </ul>
       )}
     </header>

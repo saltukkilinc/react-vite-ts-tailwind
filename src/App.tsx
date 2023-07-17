@@ -7,6 +7,7 @@ import Auth from "./pages/auth";
 import CalendarPage from "./pages/calendar";
 import ModalSheetPage from "./pages/modalSheet";
 import Pdf from "./pages/pdf";
+import LeafletMap from "./pages/map";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="calendar" element={<CalendarPage />} />
         <Route path="modal-sheet" element={<ModalSheetPage />} />
         <Route path="react-pdf" element={<Pdf />} />
+        <Route path="leaflet-map" element={<LeafletMap />} />
       </Route>
     </Routes>
   );
