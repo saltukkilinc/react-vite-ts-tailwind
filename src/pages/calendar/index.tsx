@@ -44,6 +44,7 @@ const CalendarPage = () => {
         <OneWayChosenCalendar
           val={returnDate}
           setVal={dispatch.calendar.setReturnDate}
+          minDate={departDate}
         />
         <p>
           First Date:{" "}

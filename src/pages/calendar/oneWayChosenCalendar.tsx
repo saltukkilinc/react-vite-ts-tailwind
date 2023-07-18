@@ -4,9 +4,10 @@ import { useAppDispatch } from '../../redux/store';
 
 type CalendarProptypes = {
   val: string;
-  setVal: any
+  setVal: any;
+  minDate?: string;
 }
-const OneWayChosenCalendar = ({val, setVal}: CalendarProptypes) => {
+const OneWayChosenCalendar = ({val, setVal, minDate}: CalendarProptypes) => {
   
   const today = new Date();
   return (
@@ -16,6 +17,7 @@ const OneWayChosenCalendar = ({val, setVal}: CalendarProptypes) => {
         value={val == 'Return Date' || val == 'Depart Date' ? today : new Date(val)}
         calendarType="ISO 8601"
         locale="en-US"
+        minDate={minDate ? new Date(minDate) : today}
       />    
     </div>
   )
