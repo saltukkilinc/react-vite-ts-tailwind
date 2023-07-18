@@ -1,25 +1,33 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, useMap, Marker, Popup, useMapEvents } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  useMap,
+  Marker,
+  Popup,
+  useMapEvents,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-
 function LocationMarker() {
-  const defaultPosition = [41.0685, 29.2153];
-  const [position, setPosition] = useState(defaultPosition)
+  const defaultPosition = { lat: 41.0685, lng: 29.2153 };
+  const [position, setPosition] = useState(defaultPosition);
+
   const map = useMapEvents({
     click(e) {
-      map.locate()
-      console.log(e.latlng)
-      setPosition(e?.latlng)
-      map.flyTo(e.latlng, map.getZoom())
+      // map.locate()
+      console.log(e.latlng);
+      setPosition(e?.latlng);
+      map.flyTo(e.latlng, map.getZoom());
     },
     // locationfound(e) {
-    //   map.locate()
     //   setPosition(e.latlng)
     //   map.flyTo(e.latlng, map.getZoom())
     // },
-  })
+  });
+
+  // const map = useMap()
 
   const selectedPin = new L.Icon({
     iconUrl: "/pin.png",
@@ -28,30 +36,24 @@ function LocationMarker() {
     // popupAnchor: [-3, -40],
   });
 
-  
-
   return position === null ? null : (
     <Marker
-        position={position}
-        key={123}
-        icon={selectedPin}
-        eventHandlers={{
-          click: () => {},
-        }}
-        zIndexOffset={0}
-      >
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
-  )
+      position={position}
+      key={123}
+      icon={selectedPin}
+      eventHandlers={{
+        click: (e) => console.log(e.latlng, "marker"),
+      }}
+      zIndexOffset={0}
+    >
+      <Popup>
+        <div>this is my custom popup</div>
+      </Popup>
+    </Marker>
+  );
 }
 
-
 const LeafletMap = () => {
-
- 
-  
   return (
     <MapContainer
       center={[41.0685, 29.2153]}
