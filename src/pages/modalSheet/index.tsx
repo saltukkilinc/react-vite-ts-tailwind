@@ -12,7 +12,7 @@ const ModalSheetPage = () => {
       <ModalSheet
         isOpen={isModalSheetOpen}
         onClose={() => setIsModalSheetOpen(false)}
-        modalSheetHeight={600}
+        modalSheetHeight={window.innerHeight * (710 / 820)}
       />
     </div>
   );

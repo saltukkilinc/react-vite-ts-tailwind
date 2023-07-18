@@ -23,6 +23,16 @@ body,
   font-family: 'Barlow';
 }
 
+/* Hide Scrollbar for chrome and keep functionality */
+*::-webkit-scrollbar {
+  display: none;
+}
+/* Hide Scrollbarr for IE, Edge and Firefox */
+*{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* <button class="react-calendar__tile react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__tile--rangeEnd react-calendar__tile--rangeBothEnds react-calendar__month-view__days__day" type="button" style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"><abbr aria-label="29 Haziran 2023">29</abbr></button> */
 
 /* If you chose range, this shows background of all choses */
@@ -49,9 +59,6 @@ body,
 .react-calendar {
   border-radius: 10px;
 }
-
-
-
 
 /* .react-calendar__tile--range {
   background-color: cadetblue !important;

@@ -24,18 +24,19 @@ function ModalSheet({
           0,
         ]}
         initialSnap={1}
+        detent="content-height"
       >
         <Sheet.Backdrop onTap={onClose} />
-        <Sheet.Container
-          style={{ borderRadius: "32px 32px 0px 0px"}}
-        >
+        <Sheet.Container style={{ borderRadius: "32px 32px 0px 0px" }}>
           <Sheet.Header>
             <div className="text-center text-lg font-medium mt-[30px] mb-7">
               Special Offers
             </div>
           </Sheet.Header>
           <Sheet.Content>
-            <SpecialOffersModalContent onClose={onClose} />
+            <Sheet.Scroller>
+              <SpecialOffersModalContent onClose={onClose} />
+            </Sheet.Scroller>
           </Sheet.Content>
         </Sheet.Container>
       </Sheet>
@@ -45,7 +46,7 @@ function ModalSheet({
 
 const SpecialOffersModalContent = ({ onClose }: { onClose: () => void }) => {
   return (
-    <div className="h-full pb-10 mx-6 flex flex-col overflow-auto">
+    <div className="h-full pb-10 mx-6 flex flex-col">
       <p className="text-base font-normal text-[#777B83] mb-6 ">
         Complete your trip quickly and easily with other services for a
         well-planned travel!
