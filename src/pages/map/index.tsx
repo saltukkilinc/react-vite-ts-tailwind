@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -14,20 +14,40 @@ function LocationMarker() {
   const defaultPosition = { lat: 41.0685, lng: 29.2153 };
   const [position, setPosition] = useState(defaultPosition);
 
-  const map = useMapEvents({
-    click(e) {
-      // map.locate()
-      console.log(e.latlng);
-      setPosition(e?.latlng);
-      map.flyTo(e.latlng, map.getZoom());
-    },
-    // locationfound(e) {
-    //   setPosition(e.latlng)
-    //   map.flyTo(e.latlng, map.getZoom())
-    // },
+  // useMapEvents HOOK
+  // const map = useMapEvents({
+  //   click(e) {
+  //     map.locate();
+  //     console.log(e.latlng);
+  //     setPosition(e?.latlng);
+  //     map.flyTo(e.latlng, map.getZoom());
+  //   },
+  //   locationfound(e) {
+  //     setPosition(e.latlng);
+  //     map.flyTo(e.latlng, map.getZoom());
+  //   },
+  // });
+
+  // useMap  HOOK
+  const map = useMap();
+
+  map.addEventListener("click", (e) => {
+    setPosition((prevPosition) => ({
+      ...prevPosition,
+      lat: e.latlng.lat,
+      lng: e.latlng.lng,
+    }));
+    map.flyTo(e.latlng, map.getZoom());
   });
 
-  // const map = useMap()
+  map.addEventListener("locationfound", (e) => {
+    setPosition({ ...position, lat: e.latlng.lat, lng: e.latlng.lng });
+    map.flyTo(e.latlng, map.getZoom());
+  });
+
+  useEffect(() => {
+    map.locate();
+  }, []);
 
   const selectedPin = new L.Icon({
     iconUrl: "/pin.png",
