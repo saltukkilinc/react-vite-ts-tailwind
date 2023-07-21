@@ -11,7 +11,8 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 function LocationMarker() {
-  const defaultPosition = { lat: 41.0685, lng: 29.2153 };
+  const defaultPosition = {lat: 41.0685, lng: 29.2153 };
+  //const defaultPosition = [ 41.0685, 29.2153 ] 
   const [position, setPosition] = useState(defaultPosition);
 
   // useMapEvents HOOK
