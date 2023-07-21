@@ -47,6 +47,10 @@ function LocationMarker() {
 
   useEffect(() => {
     map.locate();
+    // const interval = setInterval(() => {
+    // }, 5000);
+
+    // return () => clearInterval(interval);
   }, []);
 
   const selectedPin = new L.Icon({
