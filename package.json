@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.0.5",
     "@react-pdf/renderer": "^3.1.12",
     "@rematch/core": "^2.2.0",
     "@rematch/loading": "^2.1.2",

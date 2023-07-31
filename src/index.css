@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @font-face{ 
   font-family: 'Barlow';              
   src:url('src/Barlow/Barlow-Italic.ttf'); 
@@ -20,7 +22,8 @@
 body,
 #root {
   min-height: 100vh;
-  font-family: 'Barlow';
+  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 /* Hide Scrollbar for chrome and keep functionality */
