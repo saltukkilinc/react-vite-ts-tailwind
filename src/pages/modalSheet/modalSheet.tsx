@@ -1,7 +1,7 @@
 import Sheet from "react-modal-sheet";
-import avisSpecialOffer from "../../assets/avisSpecialOffer.png";
-import hiltonSpecialOffer from "../../assets/hiltonSpecialOffer.png";
-import allianzSpecialOffer from "../../assets/allianzSpecialOffer.png";
+import avisSpecialOffer from "../../assets/images/avisSpecialOffer.png";
+import hiltonSpecialOffer from "../../assets/images/hiltonSpecialOffer.png";
+import allianzSpecialOffer from "../../assets/images/allianzSpecialOffer.png";
 
 function ModalSheet({
   isOpen,

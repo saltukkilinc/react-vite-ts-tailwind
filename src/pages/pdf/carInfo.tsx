@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, Image } from "@react-pdf/renderer";
-import avisIcon from "../../assets/avisIcon.png";
+import avisIcon from "../../assets/images/avisIcon.png";
 
 import { pdfStyles } from "./pdfStyle";
 
