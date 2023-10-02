@@ -40,7 +40,8 @@ body,
 
 /* If you chose range, this shows background of all choses */
 .react-calendar__tile--active {
-  background-color: chartreuse !important;
+  /* background-color: chartreuse !important; */
+  background-color: #15BCD3 !important;
 }
 /* This show today's background */
 .react-calendar__tile--now {
@@ -51,13 +52,19 @@ body,
   background-color: rgb(98, 96, 126) !important;
 }
 
+
 .react-calendar__tile--rangeStart {
-  background-color: red !important;
+  /* background-color: red !important; */
+  background-color: #15BCD3 !important;
+  border-radius: 150px 0px 0px 150px;
 }
 
 .react-calendar__tile--rangeEnd {
-  background-color:rgb(255, 0, 234) !important;
+  /* background-color:rgb(255, 0, 234) !important; */
+  background-color: #15BCD3 !important;
+  border-radius: 0px 150px 150px 0px;
 }
+
 
 .react-calendar {
   border-radius: 10px;
